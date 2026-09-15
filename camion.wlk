@@ -1,6 +1,5 @@
 object camion {
     const carga = #{}
-    const tara = 1000
     
     method cargarObjeto(unObjeto){
         carga.add(unObjeto)
@@ -9,18 +8,25 @@ object camion {
     method descargarObjeto(unObjeto){
         carga.remove(unObjeto)
     }
+    
 
     method pesoTotal(){
-        return 1000 + carga.peso()
+        return 1000 + carga.sum({p=> p.peso()})
     }
 
     method pesoEsPar(carga){
-        return carga.peso().even()
+        return carga.all({p=> p.peso().even()})
     }
 
-    method pesoDeObjeto(peso){
-        return carga.any()
+    method hayObjetoConPeso(valor){
+        return carga.any({p=> p.peso() == valor})
     }
+
+    method objetoConPeligrosidad(valor){
+        return carga.find({p=> p.peligrosidad() == valor})
+    }
+
+    
 
 
 
