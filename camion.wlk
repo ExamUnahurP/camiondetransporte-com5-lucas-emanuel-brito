@@ -42,6 +42,12 @@ object camion {
         return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < valor})
     }
 
-    method valorEntre(numMin, num)
+    method valorEntre(numMin, numMax) {
+        return carga.any({p=> p.peso().between(numMin, numMax)})
+    }
+
+    method objetoMasPesado() {
+        return carga.max({p=> p.peso()})
+    }
 
 }
