@@ -1,9 +1,11 @@
 import camion.*
 
-describe "group of test for camion" {
+describe "bateria de test para camion ejercicio camion de transporte" {
 
-  test "first test" {
-    assert.that(true)
+  test "camion empieza vacio y se agegan objetos" {
+    camion.cargarObjeto(bumblebee)
+    camion.cargarObjeto(paqueteDeLadrillo)
+    camion.cargar
   }
 
 }
