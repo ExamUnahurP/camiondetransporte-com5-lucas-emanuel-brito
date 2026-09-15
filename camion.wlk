@@ -39,9 +39,7 @@ object camion {
     }
 
     method puedeCircularEnRuta(valor){
-        return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < })
+        return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < valor})
     }
-
-
 
 }
