@@ -9,20 +9,44 @@ object knightRider {
 }
 
 object bumblebee {
-    var estado = "auto"
+    var esAuto = true
     method peso(){
         return 800
     }
 
+    method esAuto(){
+        return esAuto
+    }
+
+    method cambiarEstado() {
+        esAuto = not esAuto
+    }
+
     method peligrosidad(){
-        if estado == "auto"{
+        if (self.esAuto()) {
             return 15
-        } if else estado == "robot"{
+        } else {
             return 30
         }
     }
+}
 
-    method cambiarEstado(unEstado) {
-        estado = "unEstado"
+object paqueteDeLadrillo {
+    var ladrillos = 1
+
+    method cambiarCantidadDeLadrillos(valor) {
+        ladrillos = valor
+    }
+
+    method peso() {
+        return 2 * ladrillos
+    }
+
+    method peligrosidad() {
+        return 2
     }
 }
+
+object 
+
+
