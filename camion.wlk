@@ -42,4 +42,6 @@ object camion {
         return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < valor})
     }
 
+    method valorEntre(numMin, num)
+
 }

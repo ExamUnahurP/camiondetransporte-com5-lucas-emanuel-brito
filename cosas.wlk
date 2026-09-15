@@ -88,7 +88,9 @@ object bateriaAntiaerea {
 }
 
 object contenedorPortuario {
-    const cosas = #{bumblebee, paqueteDeLadrillo(), }
+    const cosas = #{bumblebee, paqueteDeLadrillo}
+
+    method cosas()= cosas
 
     method peso() {
         return 100 + cosas.sum({p=> p.peso()})
@@ -99,4 +101,35 @@ object contenedorPortuario {
     }
 }
 
+object residuosRadiactivos {
+    var peso = 1
+
+    method peso() {
+        return peso
+    }
+
+    method cambiarPeso(valor) {
+        peso = valor
+    }
+
+    method peligrosidad() {
+        return 200
+    }
+}
+
+object embalajeDeSeguridad {
+    var objeto = contenedorPortuario
+
+    method cambiarObjeto(unObjeto) {
+        objeto = unObjeto
+    }
+
+    method peso() {
+        return objeto.peso()
+    }
+
+    method peligrosidad() {
+        return objeto.peligrosidad() / 2
+    }
+}
 
