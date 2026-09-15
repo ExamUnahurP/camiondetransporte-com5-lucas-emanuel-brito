@@ -1,11 +1,13 @@
 import camion.*
+import cosas.*
 
 describe "bateria de test para camion ejercicio camion de transporte" {
 
   test "camion empieza vacio y se agegan objetos" {
     camion.cargarObjeto(bumblebee)
     camion.cargarObjeto(paqueteDeLadrillo)
-    camion.cargar
+    camion.cargarObjeto(bateriaAntiaerea)
+    assert.equals(1317, camion.pesoTotal())
   }
 
 }
