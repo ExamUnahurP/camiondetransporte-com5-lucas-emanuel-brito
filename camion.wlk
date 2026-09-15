@@ -26,7 +26,21 @@ object camion {
         return carga.find({p=> p.peligrosidad() == valor})
     }
 
-    
+    method listaDePeligrosos(valor){
+        return carga.filter({p=> p.peligrosidad() > valor})
+    }
+
+    method objetoPeligroso(unObjeto){
+        return carga.filter({p=> p.peligrosidad() > unObjeto.peligrosidad()})
+    }
+
+    method esPesoExcedido(){
+        return self.pesoTotal() > 2500
+    }
+
+    method puedeCircularEnRuta(valor){
+        return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < })
+    }
 
 
 
