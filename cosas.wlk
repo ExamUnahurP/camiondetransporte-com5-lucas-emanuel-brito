@@ -35,7 +35,7 @@ object paqueteDeLadrillo {
     var ladrillos = 1
 
     method cambiarCantidadDeLadrillos(valor) {
-        ladrillos = valor
+        ladrillos = valor.max(0)
     }
 
     method peso() {
@@ -47,6 +47,56 @@ object paqueteDeLadrillo {
     }
 }
 
-object 
+object arenaAGranel {
+    var peso = 1
+    
+    method peso() {
+        return peso
+    }
+
+    method cambiarPeso(unPeso) {
+        peso = unPeso
+    }
+
+    method peligrosidad() {
+        return 1
+    }
+}
+
+object bateriaAntiaerea {
+    var tieneMisiles = true
+    
+    method peso() {
+        if tieneMisiles {
+            return 300
+        } else {
+            return 200
+        }
+    }
+
+    method tieneMisiles() {
+        tieneMisiles = not tieneMisiles
+    }
+
+    method peligrosidad() {
+        if tieneMisiles {
+            return 100
+        } else {
+            return 0
+        }
+    }
+}
+
+object contenedorPortuario {
+    const cosas = #{}
+
+    method peso() {
+        return 100 + cosas.sum({p=> p.peso()})
+    }
+
+    method peligrosidad() {
+        return cosas.find
+    }
+}
 
 
