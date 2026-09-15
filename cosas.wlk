@@ -88,14 +88,14 @@ object bateriaAntiaerea {
 }
 
 object contenedorPortuario {
-    const cosas = #{}
+    const cosas = #{bumblebee, paqueteDeLadrillo(), }
 
     method peso() {
         return 100 + cosas.sum({p=> p.peso()})
     }
 
     method peligrosidad() {
-        return cosas.find
+        return (cosas.max({p=> p.peligrosidad()})).peligrosidad()
     }
 }
 
