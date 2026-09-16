@@ -39,7 +39,7 @@ object camion {
     }
 
     method puedeCircularEnRuta(valor){
-        return self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < valor})
+        return !self.esPesoExcedido() && carga.all({p=> p.peligrosidad() < valor})
     }
 
     method valorEntre(numMin, numMax) {
