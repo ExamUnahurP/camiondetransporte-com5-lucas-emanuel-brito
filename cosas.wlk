@@ -88,7 +88,7 @@ object bateriaAntiaerea {
 }
 
 object contenedorPortuario {
-    const cosas = #{bumblebee, paqueteDeLadrillo}
+    const cosas = []
 
     method cosas()= cosas
 
