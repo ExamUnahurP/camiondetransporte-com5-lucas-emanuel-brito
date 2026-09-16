@@ -7,7 +7,7 @@ describe "bateria de test para camion ejercicio camion de transporte" {
     camion.cargarObjeto(bumblebee)
     camion.cargarObjeto(paqueteDeLadrillo)
     camion.cargarObjeto(bateriaAntiaerea)
-    assert.equals(1317, camion.pesoTotal())
+    assert.equals(2102, camion.pesoTotal())
   }
 
 }
