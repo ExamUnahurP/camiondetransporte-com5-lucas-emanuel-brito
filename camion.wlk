@@ -14,7 +14,7 @@ object camion {
         return 1000 + carga.sum({p=> p.peso()})
     }
 
-    method pesoEsPar(carga){
+    method pesoEsPar(){
         return carga.all({p=> p.peso().even()})
     }
 
